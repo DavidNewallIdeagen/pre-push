@@ -1,7 +1,7 @@
-# pre-commit
+# pre-push
 
-A simple `pre-commit` hook installer for `git`. This will ensure that your
-test suite passes before you can commit your changes. In addition to running
+A simple `pre-push` hook installer for `git`. This will ensure that your
+test suite passes before you can push your changes. In addition to running
 your `npm test` it also has the option to run custom scripts that you have
 specified in your `package.json`.
 
@@ -11,24 +11,24 @@ It's advised to install this module as `devDependency` in your `package.json`
 file so it doesn't get installed on production servers. Run:
 
 ```
-npm install --save-dev pre-commit
+npm install --save-dev pre-push
 ```
 
 To install it as `devDependency`. When this module is installed it will override
-the existing `pre-commit` file in your `.git/hooks` folder. Existing
-`pre-commit` hooks will be backed up.
+the existing `pre-push` file in your `.git/hooks` folder. Existing
+`pre-push` hooks will be backed up.
 
 ### Configuration
 
-`pre-commit` will try to run your `npm test` command by default. It does this by
+`pre-push` will try to run your `npm test` command by default. It does this by
 running `npm run test` in the root of your git repository. It will only run that
 command if it's not the default values that are entered when you issue an `npm
 init`.
 
-But `pre-commit` is not limited to just running your `npm test`'s during the
-commit hook. It's also capable of running every other script that you've
+But `pre-push` is not limited to just running your `npm test`'s during the
+push hook. It's also capable of running every other script that you've
 specified in your `package.json` "scripts" field. The only thing you need to do
-is add a `pre-commit` array to your `package.json` that specifies which scripts
+is add a `pre-push` array to your `package.json` that specifies which scripts
 you want to have ran and in which order:
 
 ```js
@@ -46,7 +46,7 @@ you want to have ran and in which order:
     "type": "git",
     "url": "https://gist.github.com/437464d0899504fb6b7b.git"
   },
-  "pre-commit": [
+  "pre-push": [
     "foo",
     "bar",
     "test"
@@ -58,7 +58,7 @@ you want to have ran and in which order:
 ```
 
 In the example above, it will first run: `npm run foo` then `npm run bar` and
-finally `npm run test` which will make the commit fail as it returns the error
+finally `npm run test` which will make the push fail as it returns the error
 code `1`.
 
 To learn more about the scripts, please read the official `npm` documentation:

@@ -9,23 +9,23 @@ var path = require('path')
 var existsSync = fs.existsSync || path.existsSync;
 
 //
-// The location of the pre-commit hook.
+// The location of the pre-push hook.
 //
-var precommit = path.resolve(__dirname, '../..', '.git', 'hooks', 'pre-commit');
+var prepush = path.resolve(__dirname, '../..', '.git', 'hooks', 'pre-push');
 
 //
-// Bail out if we don't have pre-commit file, it might be removed manually.
+// Bail out if we don't have pre-push file, it might be removed manually.
 //
-if (!existsSync(precommit)) return;
+if (!existsSync(prepush)) return;
 
 //
-// If we don't have an old file, we should just remove the pre-commit hook. But
-// if we do have an old precommit file we want to restore that.
+// If we don't have an old file, we should just remove the pre-push hook. But
+// if we do have an old prepush file we want to restore that.
 //
-if (!existsSync(precommit +'.old')) {
-  fs.unlinkSync(precommit);
+if (!existsSync(prepush +'.old')) {
+  fs.unlinkSync(prepush);
 } else {
-  fs.writeFileSync(precommit, fs.readFileSync(precommit +'.old'));
-  fs.chmodSync(precommit, '755');
-  fs.unlinkSync(precommit +'.old');
+  fs.writeFileSync(prepush, fs.readFileSync(prepush +'.old'));
+  fs.chmodSync(prepush, '755');
+  fs.unlinkSync(prepush +'.old');
 }

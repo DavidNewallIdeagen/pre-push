@@ -6,5 +6,5 @@ then
   PATH=$PATH:/usr/local/bin
 fi
 
-# run pre-commit hook
-./node_modules/pre-commit/hook
+# run pre-push hook
+./node_modules/pre-push/hook

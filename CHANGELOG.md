@@ -1,3 +1,6 @@
+## clearhead
+- merged gui pr and commit==>push
+
 ## 0.0.9
 - Added missing uninstall hook to remove and restore old scripts.
 

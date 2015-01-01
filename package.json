@@ -1,22 +1,18 @@
 {
-  "name": "pre-commit",
+  "name": "pre-push",
   "version": "0.0.9",
-  "description": "Automatically install pre-commit hooks for your npm modules.",
+  "description": "Automatically install pre-push hooks for your npm modules.",
   "main": "index.js",
   "scripts": {
     "install": "node install.js",
     "uninstall": "node uninstall.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/observing/pre-commit.git"
-  },
   "keywords": [
     "git",
     "hooks",
     "npm",
-    "pre-commit",
-    "precommit",
+    "pre-push",
+    "prepush",
     "run",
     "test",
     "development"
@@ -25,8 +21,5 @@
   "license": "MIT",
   "peerDependencies": {
     "which": "^1.0.5"
-  },
-  "devDependencies": {
-    "pre-commit": "git://github.com/observing/pre-commit.git"
   }
 }
