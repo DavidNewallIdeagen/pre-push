@@ -83,15 +83,6 @@ function run(status, err, output) {
 
   silent = pkg['pre-push.silent'] || false;
 
-  if (!status.trim().length) {
-    if (!silent) {
-      console.log('');
-      console.log('pre-push: No changes detected, bailing out.');
-      console.log('');
-    }
-    return;
-  }
-
   if (!pkg.scripts) {
     if (!silent) {
       console.log('');
